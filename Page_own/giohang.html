@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Giỏ hàng | JULIE SKIN</title>
+
+    <!-- CSS chung của website -->
+    <link rel="stylesheet" href="../web.css">
+
+    <!-- CSS riêng của giỏ hàng -->
+    <link rel="stylesheet" href="giohang.css">
+</head>
+
+<body class="cart-page">
+
+    <!-- ================= HEADER ================= -->
+<header>
+    <div class="container header-content">
+
+        <img
+            class="main-logo"
+            src="https://i.pinimg.com/736x/53/1d/b7/531db770b2f19705edd4242a478e3d38.jpg"
+            alt="Logo JULIE SKIN"
+        >
+
+        <h1 class="logo">JULIE SKIN</h1>
+
+        <nav>
+            <a href="../website.html">Trang chủ</a>
+
+            <a href="sanpham.html">Sản phẩm</a>
+
+            <a href="vechungtoi.html">Về chúng tôi</a>
+
+            <a href="lienhe.html">Liên hệ</a>
+
+            <a href="giohang.html" class="active">
+                Giỏ hàng (<span id="cart-count">0</span>)
+            </a>
+        </nav>
+
+    </div>
+</header>
+
+
+    <!-- ================= NỘI DUNG CHÍNH ================= -->
+    <main class="cart-main">
+
+        <div class="cart-container">
+
+            <!-- TIÊU ĐỀ -->
+            <section class="cart-intro" id="cart-intro">
+
+                <p class="cart-subtitle">JULIE SKIN CARE</p>
+
+                <h2>Giỏ hàng của bạn</h2>
+
+                <p>
+                    Chọn những sản phẩm yêu thích và chăm sóc làn da
+                    của bạn mỗi ngày.
+                </p>
+
+            </section>
+
+
+            <!-- ================= GIỎ HÀNG ================= -->
+            <section id="cart-section">
+
+                <div class="cart-layout">
+
+                    <!-- DANH SÁCH SẢN PHẨM -->
+                    <div class="cart-products">
+
+                        <div class="cart-products-heading">
+                            <h3>Sản phẩm của bạn</h3>
+
+                            <span>
+                                <span id="cart-item-count">0</span> món hàng
+                            </span>
+                        </div>
+
+                        <!-- JavaScript hiển thị sản phẩm tại đây -->
+                        <div id="cart-items"></div>
+
+                        <!-- GIỎ HÀNG TRỐNG -->
+                        <div id="empty-cart" class="empty-cart" hidden>
+
+                            <div class="empty-cart-icon">♡</div>
+
+                            <h3>Giỏ hàng đang trống</h3>
+
+                            <p>
+                                Bạn chưa chọn sản phẩm nào.
+                                Hãy khám phá các sản phẩm của JULIE SKIN nhé!
+                            </p>
+
+                            <a href="sanpham.html" class="continue-shopping">
+                                Khám phá sản phẩm
+                            </a>
+
+                        </div>
+
+                        <a href="sanpham.html" class="back-to-products">
+                            ← Tiếp tục mua sắm
+                        </a>
+
+                    </div>
+
+
+                    <!-- TỔNG ĐƠN HÀNG -->
+                    <aside class="cart-summary">
+
+                        <h3>Tóm tắt đơn hàng</h3>
+
+                        <div class="summary-row">
+                            <span>Số lượng sản phẩm</span>
+                            <strong id="summary-count">0</strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Tạm tính</span>
+                            <strong id="subtotal">0 ₫</strong>
+                        </div>
+
+                        <div class="summary-row">
+                            <span>Phí vận chuyển</span>
+                            <strong id="shipping">0 ₫</strong>
+                        </div>
+
+                        <p class="shipping-note">
+                            Phí vận chuyển mặc định là 30.000 ₫
+                            khi đơn hàng có sản phẩm.
+                        </p>
+
+                        <div class="summary-total">
+                            <span>Tổng thanh toán</span>
+                            <strong id="total-price">0 ₫</strong>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="checkout-btn"
+                            class="checkout-btn"
+                            disabled
+                        >
+                            Tiến hành thanh toán
+                        </button>
+
+                        <p class="secure-note">
+                            Cảm ơn bạn đã lựa chọn JULIE SKIN.
+                        </p>
+
+                    </aside>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= FORM THANH TOÁN ================= -->
+            <section id="checkout-section" hidden>
+
+                <div class="checkout-card">
+
+                    <div class="checkout-heading">
+
+                        <p class="cart-subtitle">JULIE SKIN CARE</p>
+
+                        <h2>Thông tin đặt hàng</h2>
+
+                        <p>
+                            Vui lòng điền thông tin nhận hàng của bạn.
+                        </p>
+
+                    </div>
+
+
+                    <form id="checkout-form">
+
+                        <div class="form-group">
+
+                            <label for="customer-name">
+                                Họ và tên <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="customer-name"
+                                name="customerName"
+                                placeholder="Nhập họ và tên"
+                                maxlength="100"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customer-phone">
+                                Số điện thoại <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="customer-phone"
+                                name="customerPhone"
+                                placeholder="Nhập số điện thoại"
+                                pattern="[0-9]{10,11}"
+                                title="Nhập số điện thoại gồm 10 hoặc 11 chữ số"
+                                maxlength="11"
+                                inputmode="numeric"
+                                autocomplete="tel"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="customer-address">
+                                Địa chỉ nhận hàng <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="customer-address"
+                                name="customerAddress"
+                                rows="3"
+                                maxlength="300"
+                                placeholder="Số nhà, đường, phường/xã, tỉnh/thành phố"
+                                autocomplete="street-address"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="payment-method">
+                                Phương thức thanh toán
+                            </label>
+
+                            <select
+                                id="payment-method"
+                                name="paymentMethod"
+                                required
+                            >
+
+                                <option value="COD">
+                                    Thanh toán khi nhận hàng (COD)
+                                </option>
+
+                                <option value="BANK">
+                                    Chuyển khoản ngân hàng
+                                </option>
+
+                            </select>
+
+                            <p class="form-note">
+                                Chuyển khoản hiện chỉ là lựa chọn phương thức,
+                                chưa thực hiện giao dịch ngân hàng tự động.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="order-note">
+                                Ghi chú đơn hàng
+                            </label>
+
+                            <textarea
+                                id="order-note"
+                                name="orderNote"
+                                rows="2"
+                                maxlength="500"
+                                placeholder="Ghi chú thêm nếu có..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- TÓM TẮT THANH TOÁN -->
+                        <div class="checkout-total">
+
+                            <span>Tổng tiền cần thanh toán</span>
+
+                            <strong id="checkout-total-price">0 ₫</strong>
+
+                        </div>
+
+
+                        <p id="checkout-error" class="checkout-error" hidden></p>
+
+
+                        <button
+                            type="submit"
+                            id="place-order-btn"
+                            class="checkout-btn"
+                        >
+                            Xác nhận đặt hàng
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="back-to-cart-btn"
+                            class="back-cart-btn"
+                        >
+                            ← Quay lại giỏ hàng
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ĐẶT HÀNG THÀNH CÔNG ================= -->
+            <section id="order-success" hidden>
+
+                <div class="success-card">
+
+                    <div class="success-icon">✓</div>
+
+                    <h2>Đặt hàng thành công!</h2>
+
+                    <p class="success-message">
+                        Cảm ơn bạn đã mua sắm tại JULIE SKIN.
+                    </p>
+
+                    <div class="order-info">
+
+                        <div class="order-info-row">
+                            <span>Mã đơn hàng</span>
+                            <strong id="order-code"></strong>
+                        </div>
+
+                        <div class="order-info-row">
+                            <span>Người nhận</span>
+                            <strong id="order-customer"></strong>
+                        </div>
+
+                        <div class="order-info-row">
+                            <span>Phương thức thanh toán</span>
+                            <strong id="order-payment"></strong>
+                        </div>
+
+                        <div class="order-info-row">
+                            <span>Tổng tiền</span>
+                            <strong id="order-total"></strong>
+                        </div>
+
+                        <div class="order-info-row">
+                            <span>Trạng thái</span>
+                            <strong id="order-status">Chờ xác nhận</strong>
+                        </div>
+
+                    </div>
+
+                    <p class="success-note">
+                        Đơn hàng đã được lưu trên trình duyệt này.
+                        Đây chưa phải xác nhận thanh toán từ ngân hàng.
+                    </p>
+
+                    <a href="sanpham.html" class="continue-shopping">
+                        Tiếp tục mua sắm
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="cart-footer">
+
+        <h3>JULIE SKIN</h3>
+
+        <p>Chăm sóc làn da, nuôi dưỡng vẻ đẹp tự nhiên.</p>
+
+        <p>© 2026 JULIE SKIN CARE</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="giohang.js"></script>
+
+</body>
+
+</html>
