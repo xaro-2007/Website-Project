@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất cả sản phẩm - Julie Skin Care</title>
+    <link rel="stylesheet" href="../Website_Project/website.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-group">
+                <img class="main-logo" src="https://i.pinimg.com/736x/53/1d/b7/531db770b2f19705edd4242a478e3d38.jpg" alt="Logo">
+                <h1 class="logo">JULIE SKIN</h1>
+            </div>
+            
+        <nav>
+            <a href="../Website_Project/website.html">Trang chủ</a> 
+            <a href="sanpham.html" class="active">Sản phẩm</a> 
+            <a href="vechungtoi.html">Về chúng tôi</a>
+            <a href="lienhe.html">Liên hệ</a>
+            <a href="giohang.html">Giỏ hàng</a>
+        </nav>
+
+    </header>
+
+    <!-- ĐƯỜNG DẪN BREADCRUMB -->
+    <div class="container breadcrumb">
+        <a href="../website.html">Trang chủ</a> > <span>Tất cả sản phẩm</span>
+    </div>
+
+    <!-- BỐ CỤC TRANG SẢN PHẨM -->
+    <section class="container products-layout">
+    
+
+        <!-- LƯỚI SẢN PHẨM BÊN PHẢI -->
+        <div class="main-products">
+            <div class="product-grid">
+                
+                <!-- Tái sử dụng class product-card từ trang chủ -->
+                <div class="product-card">
+                    <span class="badge">-20%</span>
+                    <img src="https://i.pinimg.com/736x/56/18/89/561889b30ff55614a70948109437082f.jpg" alt="Kem dưỡng da">
+                    <h4>Kem dưỡng ẩm mịn da B5</h4>
+                    <div class="stars">★★★★★</div>
+                    <div class="price">
+                        <span class="current-price">250.000đ</span>
+                        <span class="old-price">300.000đ</span>
+                    </div>
+                    <button class="btn-add-cart" onclick="themVaoGioHang()">Thêm vào giỏ</button>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge new">Mới</span>
+                    <img src="https://i.pinimg.com/736x/58/86/b7/5886b7cd5cb197153bb9473bd6ee9096.jpg" alt="Son môi">
+                    <h4>Serum phục hồi da Medicube</h4>
+                    <div class="stars">★★★★☆</div>
+                    <div class="price">
+                        <span class="current-price">180.000đ</span>
+                    </div>
+                    <button class="btn-add-cart" onclick="themVaoGioHang()">Thêm vào giỏ</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="badge">Hot</span>
+                    <img src="https://i.pinimg.com/1200x/9c/33/ff/9c33ff486a73d5c870f7eefd88a6667d.jpg" alt="Serum">
+                    <h4>Madagascar Centella Poremizing Fresh Ampoule </h4>
+                    <div class="stars">★★★★★</div>
+                    <div class="price">
+                        <span class="current-price">430.000đ</span>
+                    </div>
+                    <button class="btn-add-cart" onclick="themVaoGioHang()">Thêm vào giỏ</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://i.pinimg.com/1200x/39/16/37/391637d2bc793353f2e88a61a1cc7c6e.jpg" alt="Toner">
+                    <h4>Nước Hoa Hồng Cấp Ẩm</h4>
+                    <div class="stars">★★★★☆</div>
+                    <div class="price">
+                        <span class="current-price">210.000đ</span>
+                    </div>
+                    <button class="btn-add-cart" onclick="themVaoGioHang()">Thêm vào giỏ</button>
+                </div>
+
+                <div class="product-card">
+                    <span class="badge">-10%</span>
+                    <img src="https://i.pinimg.com/1200x/61/5d/b7/615db706dccb7079a7d970b1eb7b891a.jpg" alt="Sữa rửa mặt">
+                    <h4>Sữa Rửa Mặt Dịu Nhẹ</h4>
+                    <div class="stars">★★★★★</div>
+                    <div class="price">
+                        <span class="current-price">150.000đ</span>
+                        <span class="old-price">170.000đ</span>
+                    </div>
+                    <button class="btn-add-cart" onclick="themVaoGioHang()">Thêm vào giỏ</button>
+                </div>
+                
+                <div class="product-card">
+                    <span class="badge new">Mới</span>
+                    <img src="https://i.pinimg.com/1200x/9e/24/c0/9e24c0030e5475f02b6b86cb3cae88c3.jpg" alt="Son môi">
+                    <h4>Kem chống nắng Make P:rem</h4>
+                    <div class="stars">★★★★★</div>
+                    <div class="price">
+                        <span class="current-price">360.000đ</span>
+                    </div>
+                    <button class="btn-add-cart" onclick="themVaoGioHang()">Thêm vào giỏ</button>
+                </div>
+
+            </div>
+
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">></button>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h2>JULIE SKIN</h2>
+                <p>Chăm sóc làn da của bạn bằng sự dịu dàng và yêu thương mỗi ngày.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Liên kết nhanh</h3>
+                <a href="../website.html">Trang chủ</a>
+                <a href="sanpham.html">Sản phẩm</a>
+                <a href="vechungtoi.html">Về chúng tôi</a>
+                <a href="lienhe.html">Liên hệ</a>
+            </div>
+            <div class="footer-column">
+                <h3>Thông tin liên hệ</h3>
+                <p>Email: contact@julieskin.com</p>
+                <p>Điện thoại: 0123 456 789</p>
+                <p>Địa chỉ: Đà Nẵng, Việt Nam</p>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2026 Julie Skin Care. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function themVaoGioHang() {
+            alert("Đã thêm sản phẩm vào giỏ hàng thành công!");
+        }
+    </script>
+</body>
+</html>
