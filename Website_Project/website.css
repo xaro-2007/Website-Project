@@ -653,3 +653,51 @@ footer {
     }
 
 }
+
+/* THANH TIM KIEM CUA LINH */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 25px;
+    max-width: 320px;
+}
+
+.search-box input {
+    width: 190px;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #d7c5b6;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-box input:focus {
+    border-color: #a47b65;
+}
+
+.search-box button {
+    padding: 10px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a47b65;
+    color: white;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #80604d;
+}
+
+#searchMessage {
+    margin-top: 12px;
+    color: #a47b65;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 992px) {
+    .search-box {
+        margin: 12px auto 0;
+    }
+}
